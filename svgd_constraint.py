@@ -1,6 +1,5 @@
 import math
 import torch
-
 def get_gradient(model, inputs,alpha=100):
     n = inputs.size(0)
     inputs = inputs.detach().requires_grad_(True)

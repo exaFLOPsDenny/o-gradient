@@ -116,22 +116,22 @@ if __name__ == "__main__":
     boundy = 4
 
     plt.clf()
-    np.save("figs/%s_samples_%s_%s_burnin%d_s%d_a%d_lr%s.npy"%(args.init,args.sampler,args.useHessian,args.burnin,args.seed,args.alpha,args.lr),xs)
+    np.save("o_gradient/figs/%s_samples_%s_%s_burnin%d_s%d_a%d_lr%s.npy"%(args.init,args.sampler,args.useHessian,args.burnin,args.seed,args.alpha,args.lr),xs)
     plt.plot(w2)
     plt.xlabel('Iters ',fontsize=17)
     plt.ylabel('Energy Dist',fontsize=17)
-    plt.savefig('figs/%s_ed_%s_%s_burnin%d_s%d_a%d_lr%s.pdf'%(args.init,args.sampler,args.useHessian,args.burnin,args.seed,args.alpha,args.lr))
-    np.save("figs/%s_ed_%s_%s_burnin%d_s%d_a%d_lr%s.npy"%(args.init,args.sampler,args.useHessian,args.burnin,args.seed,args.alpha,args.lr),w2)
+    plt.savefig('o_gradient/figs/%s_ed_%s_%s_burnin%d_s%d_a%d_lr%s.pdf'%(args.init,args.sampler,args.useHessian,args.burnin,args.seed,args.alpha,args.lr))
+    np.save("o_gradient/figs/%s_ed_%s_%s_burnin%d_s%d_a%d_lr%s.npy"%(args.init,args.sampler,args.useHessian,args.burnin,args.seed,args.alpha,args.lr),w2)
 
     plt.clf()
     plot_2d_contour(logp, xlim=[-bound,bound], ylim=[-boundy,boundy], gridsize=100)
     plot_2d_zero(g, xlim=[-bound,bound], ylim=[-boundy,boundy], gridsize=100)
     plt.plot(xs[-1,:,0], xs[-1,:,1], '.', alpha=0.8, markersize=5)
-    plt.savefig('figs/%s_path_%s_%s_burnin%d_s%d_a%d_lr%s.pdf'%(args.init,args.sampler,args.useHessian,args.burnin,args.seed,args.alpha,args.lr))
+    plt.savefig('o_gradient/figs/%s_path_%s_%s_burnin%d_s%d_a%d_lr%s.pdf'%(args.init,args.sampler,args.useHessian,args.burnin,args.seed,args.alpha,args.lr))
 
     plt.clf()
     plt.plot(gx)
     plt.xlabel('Iters ',fontsize=17)
     plt.ylabel('Constraint',fontsize=17)
-    np.save('figs/%s_g_%s_%s_burnin%d_s%d_a%d_lr%s.npy'%(args.init,args.sampler,args.useHessian,args.burnin,args.seed,args.alpha,args.lr),gx)
-    plt.savefig('figs/%s_g_%s_%s_burnin%d_s%d_a%d_lr%s.pdf'%(args.init,args.sampler,args.useHessian,args.burnin,args.seed,args.alpha,args.lr))
+    np.save('o_gradient/figs/%s_g_%s_%s_burnin%d_s%d_a%d_lr%s.npy'%(args.init,args.sampler,args.useHessian,args.burnin,args.seed,args.alpha,args.lr),gx)
+    plt.savefig('o_gradient/figs/%s_g_%s_%s_burnin%d_s%d_a%d_lr%s.pdf'%(args.init,args.sampler,args.useHessian,args.burnin,args.seed,args.alpha,args.lr))
